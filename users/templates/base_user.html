@@ -31,7 +31,7 @@
 							<a href="#">Home</a>
 						</li>|
 						<li>
-							<a href="about.html">About Us</a>
+							<a href="{% url 'template_about' %}">About Us</a>
 						</li>|
 						<li>
 							<a href="contact.html">Contact Us</a>
@@ -47,7 +47,7 @@
 	<div class="header">
 	<div class="head-t">
 		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" class="img-responsive" alt=""/> </a>
+			<a href="index.html"><img src="../static/img/tradeasyLogo.png" class="img-responsive" alt=""/> </a>
 		</div>
 		<!-- start header_right -->
 		<div class="header_right">
@@ -69,14 +69,16 @@
 						                    <input type="submit" id="login" value="Sign in">
 						                	<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
 						            	</fieldset>
-						            <span><a href="#">Forgot your password?</a></span>
+									<span><a href="#">Forgot your password?</a></span>
+									<span><a href="{% url 'social:begin' 'google-oauth2' %}">Login with google</a></span>
+									<span><a href="#">Login with facebook</a></span>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="reg">
-					<a href="/register">REGISTER</a>
+					<a href="{% url 'template_register' %}">REGISTER</a>
 				</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -418,8 +420,8 @@
 		</div>
 		<div class="col-md-2 abt">
 			<h4>ABOUT US</h4>
-				<li><a href="#">Our Stories</a></li>
-				<li><a href="/about">Career</a></li>
+				<li><a href="{% url 'template_story' %}">Our Stories</a></li>
+				<li><a href="{% url 'template_about' %}">Career</a></li>
 				<li><a href="contact.html">Contact</a></li>
 		</div>
 		<div class="col-md-2 myac">
