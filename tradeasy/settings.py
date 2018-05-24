@@ -25,7 +25,7 @@ SECRET_KEY = 'x=ivvv%#kta!_=_$1)8a^p@+u&m6cn5sa)qb8yurxvnu6ak&io'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tradeasy.herokuapp.com']
 
 
 # Application definition
