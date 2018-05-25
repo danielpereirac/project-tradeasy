@@ -14,27 +14,27 @@ class User(models.Model):
     created = models.DateField(auto_now=True)
     updated = models.DateField(auto_now=True)
 
-class Item(models.Model):
-    title = models.CharField()
-    description = models.CharField(max_length=10, null=True)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE,)
-    created = models.DateField(auto_now=True)
+# class Item(models.Model):
+#     title = models.CharField()
+#     description = models.CharField(max_length=10, null=True)
+#     category = models.ForeignKey('Category', on_delete=models.CASCADE,)
+#     created = models.DateField(auto_now=True)
 
-class Transaction(models.Model):
-    userOne = models.ForeignKey('User', on_delete=models.CASCADE)
-    userTwo = models.ForeignKey('User', on_delete=models.CASCADE)
-    itemOne = models.ForeignKey('Item', on_delete=models.CASCADE)
-    itemTwo = models.ForeignKey('Item', on_delete=models.CASCADE)
-    initialDate = models.DateField(auto_now=True)
-    finalDate = models.DateField(auto_now=True)
-    description = models.CharField(max_length=10, null=True)
-    status = int
+# class Transaction(models.Model):
+#     userOne = models.ForeignKey('User', on_delete=models.CASCADE)
+#     userTwo = models.ForeignKey('User', on_delete=models.CASCADE)
+#     itemOne = models.ForeignKey('Item', on_delete=models.CASCADE)
+#     itemTwo = models.ForeignKey('Item', on_delete=models.CASCADE)
+#     initialDate = models.DateField(auto_now=True)
+#     finalDate = models.DateField(auto_now=True)
+#     description = models.CharField(max_length=10, null=True)
+#     status = int
 
-class Message(models.Model):
-    byUser = int
-    toUser = int
-    transaction = models.CharField(max_length=10, null=True)
-    message = models.CharField(max_length=10, null=True)
-    date = models.DateField(auto_now=True)
+# class Message(models.Model):
+#     byUser = int
+#     toUser = int
+#     transaction = models.CharField(max_length=10, null=True)
+#     message = models.CharField(max_length=10, null=True)
+#     date = models.DateField(auto_now=True)
 
 

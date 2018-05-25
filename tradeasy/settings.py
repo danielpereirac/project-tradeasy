@@ -25,7 +25,7 @@ SECRET_KEY = 'x=ivvv%#kta!_=_$1)8a^p@+u&m6cn5sa)qb8yurxvnu6ak&io'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tradeasy.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'tradeasy.herokuapp.com']
 
 
 # Application definition
@@ -119,5 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfolder'
