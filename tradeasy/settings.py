@@ -124,3 +124,4 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfolder'
