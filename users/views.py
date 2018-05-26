@@ -16,16 +16,22 @@ firebase = pyrebase.initialize_app(config)
 
 auth = firebase.auth()
 
-def singin(request):
+def signin(request):
     return render(request)
 
 def postsign(request):
     email=request.POST.get('email')
     password=request.POST.get('password')
-
-    user = auth.sign_in_with_email_and_password(email,password)
+    try:
+        user = auth.sign_in_with_email_and_password(email,password)
+    except:
+        message="Invalid Credentials"
+        return render(request, "login.html", {"message":message})
 
     return render(request, "about.html")
+
+def login(request):
+    return render(request, 'login.html')
 
 def home(request):
     return render(request, 'home.html')
@@ -39,6 +45,14 @@ def register(request):
 def story(request):
     return render(request, 'story.html')
 
+class LoginUserView(View):
+    template_name = 'login.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request):
+        return render(request, self.template_name)
 
 class HomeUserView(View):
     template_name = 'home.html'
