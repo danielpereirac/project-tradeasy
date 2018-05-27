@@ -30,24 +30,25 @@
             </script>
              <div class="registration_form">
              <!-- Form -->
-                <form id="registration_form" action="contact.php" method="post">
+                <form id="registration_form" action="/postsignup/" method="post">
+                    {% csrf_token %}
                     <div>
                         <label>
-                            <input placeholder="full name:" type="text" tabindex="1" required autofocus>
+                            <input placeholder="Full Name:" type="text" tabindex="1" name="name" required autofocus>
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input placeholder="email address:" type="email" tabindex="3" required>
+                            <input placeholder="Email Address:" type="email" tabindex="3" name="email" required>
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input placeholder="password" type="password" tabindex="4" required>
+                            <input placeholder="Password" type="password" tabindex="4" name="password" required>
                         </label>
                     </div>
                     <div>
-                        <input type="submit" value="create an account" id="register-submit">
+                        <input type="submit" value="Create An Account" id="register-submit" onclick="location.href='{% url 'template_signup' %}'">
                     </div>
                 </form>
                 <!-- /Form -->
@@ -60,12 +61,12 @@
                 <form id="registration_form" action="contact.php" method="post">
                     <div>
                         <label>
-                            <input placeholder="email:" type="email" tabindex="3" required>
+                            <input placeholder="Email:" type="email" tabindex="3" required>
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input placeholder="password" type="password" tabindex="4" required>
+                            <input placeholder="Password" type="password" tabindex="4" required>
                         </label>
                     </div>						
                     <div>

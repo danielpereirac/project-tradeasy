@@ -521,6 +521,7 @@ input:focus {
 	position: relative;
 	font-size: 0.8725em;
 	-webkit-appearance: none;
+	text-transform: capitalize;
 }
 .search input[type="text"]:hover{
 	background: #ffffff;
@@ -552,6 +553,7 @@ input:focus {
   width: 21%;
 }
 .create_btn a {
+  text-transform: capitalize;
   display: inline-block;
   padding: 6px 16px;
   font-size: 0.8725em;
@@ -767,6 +769,7 @@ ul.megamenu.skyblue {
 	display: block;
 	font-size: 0.95em;
 	color: #555;
+	text-transform: capitalize;
 	line-height: 1.8em;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -824,6 +827,7 @@ ul.megamenu.skyblue {
   margin: 0.5em 0;
 }
 .crt-btn a {
+  text-transform: capitalize;
   display: inline-block;
   padding: 6px 16px;
   font-size: 0.8725em;
@@ -1068,6 +1072,7 @@ display:block;
   width: 33.33%;
 }
 .cr_btn a {
+  text-transform: capitalize;
   display: inline-block;
   padding: 3px 25px;
   font-size: 0.9em;
@@ -1081,6 +1086,7 @@ display:block;
   text-decoration:none;
 }
 .cr_btn1 a {
+  text-transform: capitalize;
   display: inline-block;
   padding: 2px 23px;
   font-size: 0.9em;
@@ -1349,6 +1355,7 @@ list-style: none;
 	line-height: 27px;
 	color: #555555;
 	cursor: pointer;
+	text-transform: capitalize;
 	font-weight: normal;
 	margin-top: 0;
 }
@@ -1630,6 +1637,7 @@ list-style: none;
 .w_nav li a{
 	display: block;
 	color:#555555;
+	text-transform:capitalize;
 }
 .w_nav li a:hover{
 	color: #00405d;
@@ -1964,6 +1972,7 @@ p.product_descr {
 .desc1 h3{
 	color:#333333;
 	font-size:1.4em;
+	text-transform:capitalize;
 }
 .desc1 p {
   margin-top: 2%;
@@ -2065,6 +2074,7 @@ p.product_descr {
 .registration h2{
 	font-size:1.5em;
 	color: #00405d;
+	text-transform:capitalize;
 	margin-bottom: 4%;
 }
 .reg_fb {
@@ -2087,6 +2097,7 @@ p.product_descr {
 	padding: 12px 16px;
 	display: inline-block;
 	font-size: 1.3em;
+	text-transform: capitalize;
 	font-style: normal;
 }
 .reg_fb:hover {
@@ -2137,6 +2148,7 @@ label {
 	font-size: 0.8925em;
 	color: #333333;
 	-webkit-appearance: none;
+	text-transform: capitalize;
 	background: #FFFFFF;
 	border: 1px solid rgb(231, 231, 231);
 	font-weight: normal;
@@ -2145,6 +2157,7 @@ label {
 	-webkit-appearance: none;
 	font-family: 'Open Sans', sans-serif;
 	color: #ffffff;
+	text-transform: capitalize;
 	display: inline-block;
 	background:#ff6978;
 	padding: 10px 20px;
@@ -2164,12 +2177,14 @@ label {
 }
 .terms{
 	text-decoration:underline;
+	text-transform:capitalize;
 	color: #00405d;
 }
 .terms:hover{
 	text-decoration:none;
 }
 .forget a{
+	text-transform: capitalize;
 	color: #999999;
 	text-decoration: underline;
 	font-size: 0.8925em;
@@ -2295,6 +2310,7 @@ ul.s_icons{
 .shoping_right p{
 	color: #333333;
 	font-size: 0.8725em;
+	text-transform: capitalize;
 	line-height: 2.5em;
 	-webkit-text-stroke: 0.4px;
 }
@@ -2342,6 +2358,7 @@ ul.s_icons{
 }
 .shoping_left a.btn1{
 	margin-top:1%;
+	text-transform: capitalize;
 	display: inline-block;
 	padding: 10px 20px;
 	font-size: 1.2em;
@@ -2389,6 +2406,7 @@ p.cart a {
 	font-size: 1.5em;
 	color: #00405d;
 	text-shadow: 0 1px 0 #ffffff;
+	text-transform: capitalize;
 }
 .map{
 	margin: 2% 2% 2% 0;
@@ -2408,6 +2426,7 @@ p.cart a {
 	display: block;
 	font-size: 0.8725em;
 	padding-bottom: 5px;
+	text-transform: capitalize;
 	font-weight: normal;
 }
 .contact-form input[type="text"], .contact-form textarea {
@@ -2420,6 +2439,7 @@ p.cart a {
 	width: 96.3333%;
 	outline: none;
 	-webkit-appearance: none;
+	text-transform: capitalize;
 }
 .contact-form textarea{
 	resize:none;

@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TradEasy</title>
+	<title>TradEasy</title>
+	<script src="{% static "scripts/jquery-1.9.1.js" %}"></script>
 	<script src="{% static "scripts/bootstrap-min.js" %}"></script>
     <link rel="stylesheet" href="{% static "styles/bootstrap.css" %}">
-    <script src="{% static "scripts/jquery-1.9.1.js" %}"></script>
     <link rel="stylesheet" href="{% static "styles/style.css" %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,9 +17,6 @@
     <script src="{% static "scripts/megamenu.js" %}"></script>
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
 	<script src="{% static "scripts/menu_jquery.js" %}"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
 
 	
 </head>
@@ -56,38 +53,17 @@
 		<div class="header_right">
 			<div class="rgt-bottom">
 				<div class="log">
-					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-						    <div id="loginBox">
-						        <form action="/postsign/" method="POST" id="loginForm">
-									{% csrf_token %}
-						                <fieldset id="body">
-						                	<fieldset>
-						                          <label for="email">Email Address</label>
-						                          <input type="text" name="email" id="email">
-						                    </fieldset>
-						                    <fieldset>
-						                            <label for="password">Password</label>
-						                            <input type="password" name="password" id="password">
-						                     </fieldset>
-						                    <input type="submit" id="login" value="Sign in">
-						            	</fieldset>
-									<span><a href="#">Forgot your password?</a></span>
-								</form>
-							</div>
+						<div id="loginContainer"><a id="loginButton" onclick="location.href='{% url 'template_logout' %}'" ><span>Logout</span></a>
 						</div>
-					</div>
 				</div>
-				<div class="reg">
-					<a href="{% url 'template_register' %}">REGISTER</a>
-				</div>
+					<a href="#"> {{ email }}</a>				
 			<div class="clearfix"> </div>
 		</div>
 		<div class="search">
 		    <form>
 		    	<input type="text" value="" placeholder="search...">
 				<input type="submit" value="">
-			</form>
+			</form> 
 		</div>
 		<div class="clearfix"> </div>
 		</div>

@@ -1,0 +1,57 @@
+{% extends "login.html" %}
+{% block body %}
+
+<div align="center" class="container">
+        <form align="center" id="loginFormForgot">    
+                <fieldset id="bodyforgot">
+                    <fieldset>
+                        <label for="forgotpass">Email to recovery your password</label>
+                        <input type="text" name="forgotpass" id="forgotpass">
+                    </fieldset>
+                    <input type="submit" class="forgotpass" value="Send" style="background:#ff6978" align="center">
+                </fieldset>
+            </form>
+        
+
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<style>
+    fieldset#bodyforgot {
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-o-border-radius:3px;
+	padding:15px 15px;
+	margin:0;
+    }
+
+    #loginFormForgot {
+   width: 300px;
+	background: #fff;
+	border: 1px solid #d6d6d6;
+}
+
+#loginFormForgot fieldset {
+    margin:3px 0 10px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+#loginFormForgot input {
+    width:92%;
+    border:1px solid #DADADA;
+	color: #222;
+	background:#FFF;
+    padding:6px;
+	font-size: 0.8125em;
+    -webkit-apperance:none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+</style>
+
+{% endblock %}
