@@ -1,0 +1,52 @@
+{% extends "base_user.html" %}
+{% load staticfiles %}
+{% block body %}
+    
+    <link rel="stylesheet" href="{% static "styles/item-detail.css" %}">
+
+    <section class="section-item-detail">
+        <div class="item-detail">
+            <img src="../static/img/horizon.jpg" alt="">
+            <div class="item-informations">
+                <div class="line-information">
+                    <label for="title">Title:</label>
+                    <p id="title">Horizon zero dawn</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="description">Description:</label>
+                    <p id="description">Bom estado</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                     <label for="category">Category:</label>
+                    <p id="category">Games.</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="author">Plataform:</label>
+                    <p id="author">PS4</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="language">Series:</label>
+                    <p id="language">Action.</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                        <label for="genre">Release Date:</label>
+                        <p id="genre">2017</p>
+                </div>
+                    <hr>
+                <div class="line-information">
+                    <label for="publisher">Developer Company</label>
+                    <p id="publisher">Guerrilla Games</p>
+                </div>
+                
+               
+
+            </div>
+
+        </div>
+    </section>
+    {% endblock %}

@@ -3,5 +3,133 @@
 {% block body %}
 
 
+<link rel="stylesheet" href="{% static "styles/home.css" %}">
+<script type="text/javascript" src="{% static "scripts/home.js" %}"></script>
+<article class="container_home">
+    
+    <section class="section-slider">
+          
+<div class="carrousel">
+    <div class="carrousel-images">
+      <!-- <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-22805.jpg" alt="">
+      <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-581613.jpg" alt="">
+      <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-496142.png" alt="">
+      <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-579281.jpg" alt=""> -->
+      <img src="../static/img/home-clothes.jpeg" alt="">
+      <img src="../static/img/home-books.jpg" alt="">
+      <img src="../static/img/home-cards.jpeg" alt="">
+      <img src="../static/img/home-consoles.png" alt="">
+    </div>
+    <button type="button" class="prev">&lt;</button>
+    <button type="button" class="next">&gt;</button>
+    <!-- <div class="bolitas">
+      <div class="bolita"></div>
+      <div class="bolita"></div>
+      <div class="bolita activa"></div>
+      <div class="bolita"></div>
+    </div> -->
+  </div>
+    </section>
+    <section class="section-top">
+        <h2>Mais Acessados !</h2>
+
+    </section>
+    <section class="section-topItens">
+      
+        <div class="card-item">
+            <img src="../static/img/horizon.jpg" alt="" onclick="location.href='{% url 'template_horizon' %}'">
+            <hr>
+            <div class="card-information">
+                <h4>Figurinha da Copa</h4>
+                <p><i class="mdi mdi-comment-alert"></i>Games</p>
+                <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+            </div>
+        </div>
+        <div class="card-item">
+                <img src="../static/img/pijamalistrados.jpe" alt="">
+                <hr>
+                <div class="card-information">
+                    <h4>The boy with striped pajamas</h4>
+                    <p><i class="mdi mdi-comment-alert"></i>Books</p>
+                    <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                </div>
+            </div>
+            <div class="card-item">
+                    <img src="../static/img/amenina.jpg" alt="">
+                    <hr>
+                    <div class="card-information">
+                        <h4>A menina que roubava livros</h4>
+                        <p><i class="mdi mdi-comment-alert"></i>Books</p>
+                        <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                    </div>
+                </div>
+                <div class="card-item">
+                        <img src="../static/img/livro.jpg" alt="" onclick="location.href='{% url 'template_livro' %}'">
+                        <hr>
+                        <div class="card-information">
+                            <h4>A cabana</h4>
+                            <p><i class="mdi mdi-comment-alert"></i>Books</p>
+                            <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                            <img src="../static/img/copa.jpg" alt="">
+                            <hr>
+                            <div class="card-information">
+                                <h4>Figurinha da Copa</h4>
+                                <p><i class="mdi mdi-comment-alert"></i>Cards</p>
+                                <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                                <img src="../static/img/copa.jpg" alt="">
+                                <hr>
+                                <div class="card-information">
+                                    <h4>Figurinha da Copa</h4>
+                                    <p><i class="mdi mdi-comment-alert"></i>Cards</p>
+                                    <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                    <img src="../static/img/copa.jpg" alt="">
+                                    <hr>
+                                    <div class="card-information">
+                                        <h4>Figurinha da Copa</h4>
+                                        <p><i class="mdi mdi-comment-alert"></i>Cards</p>
+                                        <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                                    </div>
+                                </div>
+                                <div class="card-item">
+                                        <img src="../static/img/copa.jpg" alt="">
+                                        <hr>
+                                        <div class="card-information">
+                                            <h4>Figurinha da Copa</h4>
+                                            <p><i class="mdi mdi-comment-alert"></i>Cards</p>
+                                            <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-item">
+                                            <img src="../static/img/copa.jpg" alt="">
+                                            <hr>
+                                            <div class="card-information">
+                                                <h4>Figurinha da Copa</h4>
+                                                <p><i class="mdi mdi-comment-alert"></i>Cards</p>
+                                                <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                                            </div>
+                                        </div>
+                                        <div class="card-item">
+                                                <img src="../static/img/copa.jpg" alt="">
+                                                <hr>
+                                                <div class="card-information">
+                                                    <h4>Figurinha da Copa</h4>
+                                                    <p><i class="mdi mdi-comment-alert"></i>Cards</p>
+                                                    <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                                                </div>
+                                            </div>
+
+       
+                                        
+    </section>
+</article>
 
 {% endblock %}

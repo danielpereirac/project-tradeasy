@@ -1,0 +1,56 @@
+{% extends "base_user.html" %}
+{% load staticfiles %}
+{% block body %}
+    
+    <link rel="stylesheet" href="{% static "styles/item-detail.css" %}">
+
+    <section class="section-item-detail">
+        <div class="item-detail">
+            <img src="../static/img/livro.jpg" alt="">
+            <div class="item-informations">
+                <div class="line-information">
+                    <label for="title">Title:</label>
+                    <p id="title">A Cabana</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="description">Description:</label>
+                    <p id="description">Uma historia emocionante !!</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                     <label for="category">Category:</label>
+                    <p id="category">Books.</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="author">Author:</label>
+                    <p id="author">William P. Young</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="language">Language:</label>
+                    <p id="language">Português</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                        <label for="genre">Genre:</label>
+                        <p id="genre">Drama</p>
+                </div>
+                    <hr>
+                <div class="line-information">
+                    <label for="publisher">Publisher:</label>
+                    <p id="publisher">Saraiva</p>
+                </div>
+                <hr>
+                <div class="line-information">
+                    <label for="edition">Edition:</label>
+                    <p id="edition">2010.</p>
+                </div>
+               
+
+            </div>
+
+        </div>
+    </section>
+    {% endblock %}

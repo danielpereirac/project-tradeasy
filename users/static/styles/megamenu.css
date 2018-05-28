@@ -1,5 +1,5 @@
-.megamenu{margin-bottom:0px;padding:0;width:100%;list-style:none;display:inline-block;position:relative;font-family:Calibri,Arial;font-size:15px}
-.megamenu li{margin-bottom:-5px;display:inline}
+.megamenu{margin-bottom:0px;padding:0;width:100%;list-style:none;display:flex;position:relative;font-family:Calibri,Arial;font-size:15px}
+.megamenu li{flex:1}
 .megamenu>li>a{float:left;padding:8px 34px;text-decoration:none;text-transform:capitalize;font-size:1em; -webkit-transition: all 0.3s ease-in-out;text-transform:uppercase;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -41,9 +41,9 @@
 .skyblue,.skyblue>li.showhide{
 }
 	
-.skyblue li>a,.skyblue>li.showhide span{color:#3f3d3d}
+.skyblue>li>a,.skyblue>li.showhide span{color:#3f3d3d;width: 100%;text-align: center;}
 .skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}.
-skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
+.skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
 .skyblue form.contact input[type="submit"]{background:#00405d;text-transform:uppercase;}
 @media(max-width:1024px){
 	.megamenu>li>a {

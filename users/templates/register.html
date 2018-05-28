@@ -58,22 +58,23 @@
             <h2>existing user</h2>
              <div class="registration_form">
              <!-- Form -->
-                <form id="registration_form" action="contact.php" method="post">
+                <form id="registration_form" action="/postsign/" method="POST">
+                    {% csrf_token %}
                     <div>
                         <label>
-                            <input placeholder="Email:" type="email" tabindex="3" required>
+                            <input placeholder="Email:" type="text" name="email" tabindex="3" required>
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input placeholder="Password" type="password" tabindex="4" required>
+                            <input placeholder="Password" type="password" name="password" tabindex="4" required>
                         </label>
                     </div>						
                     <div>
                         <input type="submit" value="sign in" id="register-submit">
                     </div>
                     <div class="forget">
-                        <a href="#">forgot your password</a>
+                        <a href="{% url 'template_forgotpass' %}">forgot your password</a>
                     </div>
                 </form>
                 <!-- /Form -->

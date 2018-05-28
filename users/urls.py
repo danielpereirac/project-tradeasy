@@ -11,6 +11,8 @@ from. views import loginerror
 from. views import registererror
 from. views import successregister
 from .views import logout
+from .views import itemdetail
+from .views import itemhorizon
 
 urlpatterns = [
     path('about/', about, name='template_about'),
@@ -22,5 +24,7 @@ urlpatterns = [
     path('postsignup/', postsignup, name='template_signup'),
     path('forgotpass/', forgotpass, name='template_forgotpass'),
     path('loginerror/', loginerror),
-    path('logout/', logout, name='template_logout')
+    path('logout/', logout, name='template_logout'),
+    path('itemdetails/', itemdetail, name='template_livro'),
+    path('itemhorizon/', itemhorizon, name='template_horizon')
 ]

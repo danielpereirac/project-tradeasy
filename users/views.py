@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.base import View
 import pyrebase
@@ -17,6 +18,28 @@ firebase = pyrebase.initialize_app(config)
 
 authe = firebase.auth()
 database = firebase.database()
+
+def postsignup(request):
+    name=request.POST.get('name')
+    email=request.POST.get('email')
+    password=request.POST.get('Password')
+    try:
+        user=authe.create_user_with_email_and_password(email,password)
+
+    except:
+        return render(request, "register_error.html")
+
+    uid=user['localId']
+    data={"name":name , "status":"1"}
+    database.child("users").child(uid).child("details").set(data)
+    return render(request, "success_register.html")
+    
+
+def itemdetail(request):
+    return render(request, 'item-detail.html')
+
+def itemhorizon(request):
+    return render(request, 'item-games.html')
 
 def signin(request):
     return render(request)
@@ -38,20 +61,7 @@ def logout (request):
     return render(request, 'login.html')
 
 
-def postsignup(request):
-    name=request.POST.get('name')
-    email=request.POST.get('email')
-    password=request.POST.get('Password')
-    try:
-        user=authe.create_user_with_email_and_password(email,password)
 
-    except:
-        return render(request, "register_error.html")
-
-    uid=user['localId']
-    data={"name":name , "status":"1"}
-    database.child("users").child(uid).child("details").set(data)
-    return render(request, "success_register.html")
 
 
 def login(request):
