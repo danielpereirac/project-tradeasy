@@ -1,0 +1,95 @@
+{% extends "base_user.html" %}
+{% load static %}
+{% block body %}
+    
+    <link rel="stylesheet" href="{% static "styles/profile.css" %}">
+    <script type="text/javascript" src="{% static "scripts/profile.js" %}"></script>
+    <section class="profile-informations">
+        <div class="container_profile">
+        <div class="profile-picture">
+            <img src="../static/img/img.jpg" alt="">
+        </div>
+        <div class="profile-forms">
+            <form action="">
+                <div class="profile-line">
+                    <label for="name">Name: </label>
+                    <input type="text" name="Name" id="name" value="{{request.user.username}}" placeholder="Name">
+                </div>
+                <div class="profile-line">
+                    <label for="email">Email: </label>
+                    <input type="email" name="Email" id="email" value="{{ request.user..email }}" placeholder="me@me.com">
+                </div>
+                <div class="profile-line">
+                    <label for="birthday">Birthday: </label>
+                    <input type="date" name="Birthday" id="birthday" value="" >
+                </div>
+                <div class="profile-line">
+                    <label for="address">Address: </label>
+                    <input type="text" name="Address" id="address" value="" placeholder="">
+                </div>
+                <div class="profile-line">
+                    <label for="cep">CEP:: </label>
+                    <input type="text" name="Cep" id="cep" value="" placeholder="18200-000">
+                </div>
+                <div class="profile-line">
+                    <label for="phone">Phone: </label>
+                    <input type="text" name="Phone" id="phone" value="" placeholder="(11) 9999-9999">
+                </div>
+                <div class="profile-line-save">
+                    <a class="bttn-save" href="">
+                        Save
+                    </a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    </section> 
+    <section class="myitens">
+        <div class="containerItens">
+        <div id="my-itens-toggle">
+            <h4>My Itens</h4>
+            <span class="plus"><i class="material-icons">add</i></span >
+            <span class="minus"><i class="material-icons">
+                    minimize
+                    </i></span >
+        </div>
+        <hr>
+        <div id="my-itensShow">
+            <div class="my-item">
+                <div class="my-item-img">
+                    <img src="../static/img/copa.jpg" alt="">
+                </div>
+                <div class="my-item-information">
+                    <h4>Figurinha da Copa</h4>
+                    <p>Figurinha da Copa do Neymar em otimo estado.</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================================================================
+    
+    Title: Simple Hotel booking form
+    Description: Simple Clean form for booking a room
+    Nerds name: Andi
+    Site: http://andi.io
+    Twitter: @gitmash
+    Location: Zurich, Switzerland 
+
+    ==== THANKS ==== 
+
+    Forked from @soulrider911 https://codepen.io/soulrider911/pen/ugnyl/
+    font: Lato (google font)
+    Icon font:   http://fontawesome.io/icons/
+
+    ==== @TODO ====
+
+    Make <select> easier to select
+
+========================================================================== -->
+
+
+{% endblock %}

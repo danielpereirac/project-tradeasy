@@ -1,9 +1,11 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
 from django.views.generic.base import View
-import pyrebase
 from django.contrib import auth
-
+from django.db import models
+from django.contrib.auth.models import User
+import pyrebase
 
 config = {
 	'apiKey': "AIzaSyDzTe7Y8MsnyyvEtP_IOOPf6TPCl3nnVJ0",
@@ -18,22 +20,20 @@ firebase = pyrebase.initialize_app(config)
 
 authe = firebase.auth()
 database = firebase.database()
+user=None
 
 def postsignup(request):
-    name=request.POST.get('name')
-    email=request.POST.get('email')
-    password=request.POST.get('Password')
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    password = request.POST.get('password')
     try:
         user=authe.create_user_with_email_and_password(email,password)
-
+        user=User.objects.create_user(name,email,password)
     except:
         return render(request, "register_error.html")
 
-    uid=user['localId']
-    data={"name":name , "status":"1"}
-    database.child("users").child(uid).child("details").set(data)
     return render(request, "success_register.html")
-    
+
 
 def itemdetail(request):
     return render(request, 'item-detail.html')
@@ -45,30 +45,35 @@ def signin(request):
     return render(request)
 
 def postsign(request):
-    email=request.POST.get('email')
-    password=request.POST.get('password')
-    try:
-        user = authe.sign_in_with_email_and_password(email,password)
-    except:
-        return render(request, "login_error.html")
-    session_id=user['idToken']
-    request.session['uid']=str(session_id)
-    print(user)
-    return render(request, "home.html", {"email":email})
+    context = {}
+    if request.method == "POST":
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        try:
+            usuario_aux = User.objects.get(email = email)
+            userPyrebase = authe.sign_in_with_email_and_password(email,password)
+            usuario = authenticate(request, username=usuario_aux.username,password=password)
+            if usuario:
+                login(request, usuario)
+                return render(request, "home.html")
 
-def logout (request):
+        except:
+            return render(request, "login_error.html")
+
+    print("final")
+    return render(request, "home.html")
+
+def logoutPage (request):
     auth.logout(request)
+    logout(request)
     return render(request, 'login.html')
 
-
-
-
-
-def login(request):
-    return render(request, 'login.html')
 
 def loginerror(request):
     return render(request, 'loginerror.html')
+
+def loginPage(request):
+    return render(request, 'login.html')
 
 def registererror(request):
     return render(request, 'register_error.html')
@@ -90,3 +95,30 @@ def register(request):
 
 def story(request):
     return render(request, 'story.html')
+
+def faq(request):
+    return render(request, 'faq.html')
+
+def howtotrade(request):
+    return render(request, 'howtotrade.html')
+
+def profile(request):
+    return render(request, 'profile.html')
+
+def registeritem(request):
+    return render(request, 'register-item.html')
+
+
+def registercloth(request):
+    title = request.POST.get('Title')
+    description = request.POST.get('Description')
+    size = request.POST.get('Size')
+    color = request.POST.get('Color')
+    brand = request.POST.get('Brand')
+
+    clothAdd = Cloth.objects.create(size=size,color=color,brand=brand,user=request.user)
+    clothAdd.save()
+
+    return render(request)
+
+

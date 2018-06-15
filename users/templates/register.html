@@ -1,4 +1,4 @@
-{% extends "login.html" %}
+{% extends "base_user.html" %}
 {% block body %}
 <div class="main">
         <!-- start registration -->
@@ -30,7 +30,7 @@
             </script>
              <div class="registration_form">
              <!-- Form -->
-                <form id="registration_form" action="/postsignup/" method="post">
+                <form id="registration_form" action="/postsignup/" method="POST">
                     {% csrf_token %}
                     <div>
                         <label>

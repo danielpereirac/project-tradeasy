@@ -17,6 +17,7 @@
     <script src="{% static "scripts/megamenu.js" %}"></script>
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
 	<script src="{% static "scripts/menu_jquery.js" %}"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	
 </head>
@@ -56,7 +57,7 @@
 						<div id="loginContainer"><a id="loginButton" onclick="location.href='{% url 'template_logout' %}'" ><span>Logout</span></a>
 						</div>
 				</div>
-					<a href="#"> {{ email }}</a>				
+				<a href="{% url 'template_profile' %}"> {{ request.user.email }}</a>
 			<div class="clearfix"> </div>
 		</div>
 		<div class="search">
@@ -66,6 +67,12 @@
 			</form> 
 		</div>
 		<div class="clearfix"> </div>
+		<div class="master_page-button">
+			<a href="{% url 'template_registeritem' %}">
+				Adicionar Item
+				<i class="material-icons">add</i>
+			</a>
+		</div>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -235,7 +242,6 @@
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Collection</a></li>
 									<li><a href="">Sort By Edition</a></li>
-									<li><a href="">Sort By Color</a></li>
 								</ul>
 							</div>
 						</div>
@@ -246,7 +252,6 @@
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Collection</a></li>
 									<li><a href="">Sort By Edition</a></li>
-									<li><a href="">Sort By Color</a></li>
 								</ul>
 							</div>
 						</div>
@@ -257,7 +262,6 @@
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Collection</a></li>
 									<li><a href="">Sort By Edition</a></li>
-									<li><a href="">Sort By Color</a></li>
 								</ul>
 							</div>
 						</div>						
@@ -280,7 +284,6 @@
 								<ul>
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Release Date</a></li>
-									<li><a href="">Sort By Mode</a></li>
 								</ul>
 							</div>
 						</div>
@@ -290,7 +293,6 @@
 								<ul>
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Release Date</a></li>
-									<li><a href="">Sort By Mode</a></li>
 								</ul>
 							</div>
 						</div>
@@ -300,7 +302,6 @@
 								<ul>
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Release Date</a></li>
-									<li><a href="">Sort By Mode</a></li>
 								</ul>
 							</div>
 						</div>
@@ -310,17 +311,6 @@
 								<ul>
 									<li><a href="">Sort By Name</a></li>
 									<li><a href="">Sort By Release Date</a></li>
-									<li><a href="">Sort By Mode</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Collections</h4>
-								<ul>
-									<li><a href="">Sort By Name</a></li>
-									<li><a href="">Sort By Release Date</a></li>
-									<li><a href="">Sort By Mode</a></li>
 								</ul>
 							</div>
 						</div>
@@ -391,8 +381,8 @@
 	<div class="container">
 		<div class="col-md-3 cust">
 			<h4>CUSTOMER CARE</h4>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">How To Trade</a></li>
+				<li><a href="{% url 'template_faq' %}">FAQ</a></li>
+				<li><a href="{% url 'template_howtotrade' %}">How To Trade</a></li>
 				<li><a href="#">Delivery</a></li>
 		</div>
 		<div class="col-md-2 abt">
@@ -403,7 +393,7 @@
 		</div>
 		<div class="col-md-2 myac">
 			<h4>MY ACCOUNT</h4>
-				<li><a href="#">Profile</a></li>
+				<li><a href="{% url 'template_profile' %}">Profile</a></li>
 				<li><a href="#">Transactions</a></li>
 				<li><a href="#">Messages</a></li>
 		</div>

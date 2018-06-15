@@ -1,0 +1,91 @@
+{% extends "base_user.html" %}
+{% load static %}
+
+{% block body %}
+    
+<div class="container" >
+    <br>
+    <p><b>How To Trade</b></p>
+    <br>
+    <p><strong>Antes de Solicitar/Aceitar uma troca</strong></p>
+    <p>Verifique primeiramente a pontuação do usuário. Depois, se for o caso, acesse suas qualificações negativas e neutras para ver o 
+        processo de negociação com outros usuários.
+        Usuários com boas qualificações são sempre mais confiáveis.</p>
+    <br>
+    <p><strong>Como Solicitar Trocas</strong></p> 
+    <p>Antes de solicitar trocas você deve informar ao site itens deseja. Utilizando a barra de procura.
+            <br>
+        O Sistema irá exibir uma lista de usuários que podem realizar trocas com você no card, games, livros ou roupas, baseado no 
+        cruzamento das suas preferências com as preferências dos demais usuários do site. 
+        Para solicitar a troca clique em TROCA 
+        <br>
+        As trocas combinam a mesma quantidade de itens para serem trocadas pelos usuários, ou seja, cada usuário terá a mesma quantidade de 
+        itens para enviar e receber.
+        Após a solicitação de troca a mesma ficará registrada no item do menu principal TROCAS - EM ANDAMENTO</p>
+    <br>
+    <p><strong>Trocas em Andamento</strong></p>
+    <p>Para acessar as trocas em andamento clique no item do menu principal TROCAS - EM ANDAMENTO.
+            <br>
+            Ao clicar neste item é mostrado uma lista de usuários que estão efetuando trocas com você. Tanto aqueles que solicitaram trocas 
+            a você quanto os que você solicitou a troca. 
+            <br>
+            Para analisar a troca, ver seu conteúdo etc, clique em DESCRIÇÃO analisar trocas. Na tela que se abre você encontra várias informações. 
+            Clicando na aba "Chat" você pode enviar uma mensagem ao outro participante, como forma de negociação, ver o status da troca também é 
+            possível clicando na aba "Status da Troca".
+            <br>
+            Se você recebeu uma solicitação de troca, poderá aceitá-la ou recusá-la. Uma vez aceita você está se comprometendo a enviar o conteúdo 
+            combinado ao outro usuário, caso não o faça poderá ser negativado e até ter sua conta cancelada do site. Com a troca aceita vocês podem 
+            combinar através do Chat quando enviarão os itens, se querem mudar o conteúdo pré-combinado etc. Em seguida mande os itens ao outro 
+            usuário e aguarde o recebimento. Geralmente os itens são enviados pelos correios.
+            <br>
+            Se você recusar a troca esta será cancelada e sairá da sua lista de trocas pendentes, indo para a lista de trocas recusadas. Caso tenha 
+            você solicitado a troca, poderá cancelá-la até que o outro usuário aceite ou recuse. Neste caso a solicitação de troca é removida.
+            </p>
+    <br>
+    <p><strong>Chat</strong></p>
+    <p>Quando for necessário perguntar algo a mais do que está descrito em um item deve ser feito através dessa área. As informações preenchidas 
+        aqui não podem ser editadas ou removidas pelos usuários.</p>
+    <br>
+    <p><strong>Status da Troca</strong></p>
+    <p>O status da troca indica em que estágio se encontra uma determinada troca. Abaixo segue o status que um troca pode ter.
+            <br>
+            >Nova - Quando um usuário faz a solicitação e o outro ainda não viu.
+            <br>
+            > Pendente - Quando um usuário faz a solicitação e outro já viu mais ainda não respondeu.
+            <br>
+            > Em Negociação - Quando o usuário que aceitou a solicitação de troca envia uma mensagem no Chat
+            <br>
+            > Aceita - Quando o usuário aceita fazer a troca.
+            <br>
+            > Recusada - Quando o usuário rejeita a troca por algum motivo.
+            <br>
+            > Qualificada - Quando um dos usuários já fez a qualificação do outro usuário.
+            <br>
+            > Finalizada - Quando os dois usuários já fizeram a qualificação um do outro.
+            </p>
+    <br>
+    <p><strong>Trocas Recusadas / Canceladas / Finalizadas</strong></p>
+    <p>O acesso a essas trocas e o mecanismo de visualização seguem o mesmo padrão das trocas em andamento.
+            <br>
+        As Trocas Recusadas são aquelas onde um usuário que recebeu uma solicitação, não aceitou a solicitação e por algum motivo não quer trocar.
+        As Trocas Canceladas são aquelas onde o usuário que enviou a solicitação não quer mais trocar e cancela a troca. Só é permitido cancelar 
+        uma troca se a mesma ainda não foi aceita ou recusada pelo outro usuário.
+        As Trocas Finalizadas são as trocas que percorreram todo o processo, desde a solicitação, o aceite e a qualificação pelas duas partes.</p>
+    <br>
+    <p><strong>Delivery</strong></p>
+    <p>Cada usuário é responsável por encaminhar seu item negociado para o outro usuário.</p>
+
+    <br>
+
+
+</div>
+    
+            <style>
+            b{
+                font-size: 28px;
+            }
+            p{
+                font-size: 20px;
+            }
+            </style>
+{% endblock %}

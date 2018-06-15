@@ -1,0 +1,123 @@
+{% extends "base_user.html" %}
+{% load static %}
+{% block body %}
+    
+    <link rel="stylesheet" href="{% static "styles/register-item.css" %}">
+    <script type="text/javascript" src="{% static "scripts/register-item.js" %}"></script>
+    <section class="item-informations">
+        <div class="container_item">
+    
+        <div class="item-picture">
+            <img src="../static/img/img.jpg" alt="">
+           
+        </div>
+        <div class="item-forms">
+                <form action="/registercloth/" method="POST">
+                <div class="item-line">
+                    <label for="title">Title: </label>
+                    <input type="text" name="Title" id="title" value="" placeholder="Name">
+                </div>
+                <div class="item-line">
+                        <label for="category ">Category: </label>
+                        <select name="categories" id="category" class="" placeholder="Category">
+                                <option value="clothes" >Clothes</option>
+                                <option value="card">Card</option>
+                                <option value="books">Books</option>
+                                <option value="games">Games</option>
+        
+                        </select>
+                    </div>
+                <div class="item-line">
+                    <label for="description ">Description: </label>
+                    <input type="text" name="Description" id="description" value="" placeholder="Describe your product">
+                </div>
+                <div class="forms_books">
+                    <div class="item-line">
+                        <label for="author">Author: </label>
+                        <input type="text" name="Author" id="author" value="">
+                    </div>
+                    <div class="item-line">
+                        <label for="language">Language: </label>
+                        <input type="text" name="Language" id="language" value="" placeholder="">
+                    </div>
+                    <div class="item-line">
+                        <label for="country">Country:: </label>
+                        <input type="text" name="Country" id="country" value="" placeholder="">
+                    </div>
+                    <div class="item-line">
+                        <label for="genre">Genre: </label>
+                        <input type="text" name="Genre" id="genre" value="" placeholder="">
+                    </div>
+                    <div class="item-line">
+                            <label for="publisher">Publisher: </label>
+                            <input type="text" name="Publisher" id="publisher" value="" placeholder="">
+                        </div>
+                    <div class="item-line">
+                    <label for="edition">Edition: </label>
+                    <input type="text" name="Edition" id="edition" value="" placeholder="">
+                    </div>
+                </div>
+            <div class="forms_clothes">
+                <div class="item-line">
+                   <label for="size">Size: </label>
+                    <input type="text" name="Size" id="size" value="" placeholder="">
+                </div>
+                <div class="item-line">
+                    <label for="color">Color: </label>
+                    <input type="text" name="Color" id="color" value="" placeholder="">
+                </div>
+                <div class="item-line">
+                    <label for="brand">Brand: </label>
+                    <input type="text" name="Brand" id="brand" value="" placeholder="">
+                </div>
+            </div>
+            <div class="forms_games">
+                <div class="item-line">
+                    <label for="collection">Collection: </label>
+                    <input type="text" name="Collection" id="collection" value="" placeholder="">
+                </div>
+                <div class="item-line">
+                    <label for="plataform">Plataform: </label>
+                    <input type="text" name="Plataform" id="plataform" value="" placeholder="">
+               </div>
+                <div class="item-line">
+                    <label for="series">Series: </label>
+                    <input type="text" name="Series" id="series" value="" placeholder="">
+                </div>
+                <div class="item-line">
+                    <label for="release">Release Date: </label>
+                    <input type="text" name="Release" id="release" value="" placeholder="">
+                </div>
+            </div>
+        <div class="forms_cards">
+                <div class="item-line">
+                    <label for="collection">Collection: </label>
+                    <input type="text" name="Collection" id="collection" value="" placeholder="">
+                </div>
+                <div class="item-line">
+                    <label for="edition">Edition: </label>
+                    <input type="text" name="Edition" id="edition" value="" placeholder="">
+                </div>
+                <div class="item-line">
+                    <label for="color">Color: </label>
+                    <input type="text" name="Color" id="color" value="" placeholder="">
+                </div>
+        </div>
+
+               
+                <div class="item-line-save">
+                    <a class="bttn-save" href="">
+                       Submmit
+                    </a>
+                </div>
+            </form>
+        </div>
+   
+    </div>
+    </section> 
+    
+
+   
+
+
+{% endblock %}
