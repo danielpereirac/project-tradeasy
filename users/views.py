@@ -6,6 +6,14 @@ from django.contrib import auth
 from django.db import models
 from django.contrib.auth.models import User
 import pyrebase
+from users.models import Cloth
+from users.models import Card
+from users.models import Book
+from users.models import Games
+from users.models import Item
+
+
+
 
 config = {
 	'apiKey': "AIzaSyDzTe7Y8MsnyyvEtP_IOOPf6TPCl3nnVJ0",
@@ -55,7 +63,7 @@ def postsign(request):
             usuario = authenticate(request, username=usuario_aux.username,password=password)
             if usuario:
                 login(request, usuario)
-                return render(request, "home.html")
+                return home(request)
 
         except:
             return render(request, "login_error.html")
@@ -85,7 +93,12 @@ def forgotpass(request):
     return render(request, 'forgotpass.html')
 
 def home(request):
-    return render(request, 'home.html')
+    itens =Item.objects.all()
+    
+    context = {
+        "itens": itens,
+        }
+    return render(request, 'home.html',context)
 
 def about(request):
     return render(request, 'about.html')
@@ -103,22 +116,61 @@ def howtotrade(request):
     return render(request, 'howtotrade.html')
 
 def profile(request):
-    return render(request, 'profile.html')
+    itens = Item.objects.filter(user=request.user)
+    context = {
+        "itens": itens,
+        }
+    return render(request, 'profile.html', context)
 
 def registeritem(request):
     return render(request, 'register-item.html')
 
 
 def registercloth(request):
-    title = request.POST.get('Title')
-    description = request.POST.get('Description')
-    size = request.POST.get('Size')
-    color = request.POST.get('Color')
-    brand = request.POST.get('Brand')
+    
+    categories= request.POST.get('categories')
+    
+    if categories=='clothes':
+        title = request.POST.get('Title')
+        description = request.POST.get('Description')
+        size = request.POST.get('Size')
+        color = request.POST.get('Color')
+        brand = request.POST.get('Brand')        
+        clothAdd = Cloth.objects.create(title=title, description=description,image='../static/img/tshirt.jpg',size=size,color=color,brand=brand,user=request.user)
+        
+        
+    if categories=='card':
+        
+        title = request.POST.get('Title')
+        description = request.POST.get('Description')
+        collection = request.POST.get('CollectionCard')
+        edition = request.POST.get('Edition')
+        color = request.POST.get('Color')
+        
+        cardAdd = Card.objects.create(title=title, description=description,image='../static/img/copa.jpg',collection=collection,edition=edition,color=color,user=request.user)
+        
+    
+    if categories=='books':
+        title = request.POST.get('Title')
+        description = request.POST.get('Description')
+        author = request.POST.get('Author')
+        language = request.POST.get('Language')
+        country = request.POST.get('Country')
+        genre = request.POST.get('Genre')
+        publisher = request.POST.get('Publisher')        
+        bookAdd = Book.objects.create(title=title, description=description,image='../static/img/livro.jpg',author=author,language=language,country=country,genre=genre,publisher=publisher,user=request.user)
 
-    clothAdd = Cloth.objects.create(size=size,color=color,brand=brand,user=request.user)
-    clothAdd.save()
 
-    return render(request)
+    if categories=='games':
+        title = request.POST.get('Title')
+        description = request.POST.get('Description')
+        publisher = request.POST.get('Collection')
+        plataform = request.POST.get('Plataform')
+        series = request.POST.get('Series')
+        release = request.POST.get('Release')
+        gameAdd = Games.objects.create(title=title, description=description,image='../static/img/gears.jpeg',publisher=publisher,plataform=plataform,series=series,releaseDate=release,user=request.user)
+        gameAdd.save()
+       
+    return home(request)
 
 

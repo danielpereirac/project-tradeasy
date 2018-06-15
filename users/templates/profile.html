@@ -17,7 +17,7 @@
                 </div>
                 <div class="profile-line">
                     <label for="email">Email: </label>
-                    <input type="email" name="Email" id="email" value="{{ request.user..email }}" placeholder="me@me.com">
+                    <input type="email" name="Email" id="email" value="{{ request.user.email }}" placeholder="me@me.com">
                 </div>
                 <div class="profile-line">
                     <label for="birthday">Birthday: </label>
@@ -56,15 +56,18 @@
         </div>
         <hr>
         <div id="my-itensShow">
-            <div class="my-item">
-                <div class="my-item-img">
-                    <img src="../static/img/copa.jpg" alt="">
+            {% for item in itens %}
+                <div class="my-item">
+                    <div class="my-item-img">
+                        <img src="{{ item.image }}" alt="">
+                    </div>
+                    <div class="my-item-information">
+                        <h4>{{item.title}}</h4>
+                        <p>{{ item.description}}</p>
+                    </div>
                 </div>
-                <div class="my-item-information">
-                    <h4>Figurinha da Copa</h4>
-                    <p>Figurinha da Copa do Neymar em otimo estado.</p>
-                </div>
-            </div>
+            {% endfor %}
+
             <hr>
         </div>
     </div>

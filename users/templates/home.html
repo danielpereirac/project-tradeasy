@@ -35,17 +35,18 @@
 
     </section>
     <section class="section-topItens">
-      
-        <div class="card-item">
-            <img src="../static/img/horizon.jpg" alt="" onclick="location.href='{% url 'template_horizon' %}'">
-            <hr>
-            <div class="card-information">
-                <h4>Figurinha da Copa</h4>
-                <p><i class="mdi mdi-comment-alert"></i>Games</p>
-                <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+        {% for item in itens %}
+            <div class="card-item">
+                <img src="{{ item.image }}" alt="" onclick="location.href='{% url 'template_horizon' %}'">
+                <hr>
+                <div class="card-information">
+                    <h4>{{item.title}}</h4>
+                    <p><i class="mdi mdi-comment-alert"></i>{{item.user.username}}</p>
+                    <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
+                </div>
             </div>
-        </div>
-        <div class="card-item">
+        {% endfor %}
+        <!-- <div class="card-item">
                 <img src="../static/img/pijamalistrados.jpe" alt="">
                 <hr>
                 <div class="card-information">
@@ -125,7 +126,7 @@
                                                     <p><i class="mdi mdi-comment-alert"></i>Cards</p>
                                                     <p><i class="mdi mdi-map-marker"></i>Sorocaba</p>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
        
                                         

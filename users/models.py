@@ -5,7 +5,7 @@ from django.db import models
 class Item(models.Model):
     title = models.CharField(max_length=30, null=False)
     description = models.CharField(max_length=10, null=False)
-    image = models.FileField(null=True,blank=True)
+    image = models.CharField(max_length=100, null=False)
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -27,7 +27,7 @@ class Cloth(Item):
     ]
 
     tipology = models.IntegerField(choices=types, default=1)
-    size = models.CharField(max_length=20, null=False)
+    size = models.CharField(max_length=20, null=True)
     color = models.CharField(max_length=20, null=True)
     brand = models.CharField(max_length=20, null=True)
     collection = models.CharField(max_length=20, null=True)
@@ -51,12 +51,11 @@ class Book(Item):
     ]
 
     tipology = models.IntegerField(choices=types,default=1)
-    author = models.CharField(max_length=30, null=False)
-    country = models.CharField(max_length=30, null=False)
-    language = models.CharField(max_length=30, null=False)
+    author = models.CharField(max_length=30, null=True)
+    country = models.CharField(max_length=30, null=True)
+    language = models.CharField(max_length=30, null=True)
     genre = models.CharField(max_length=20, null=True)
     publisher = models.CharField(max_length=20, null=True)
-    publicationDate = models.DateTimeField()
     pages = int
     edition = int
     
@@ -75,7 +74,7 @@ class Games(Item):
     ]
 
     tipology = models.IntegerField(choices=types,default=1)
-    plataform = models.CharField(max_length=20, null=False)
+    plataform = models.CharField(max_length=20, null=True)
     series = models.CharField(max_length=20, null=True)
     releaseDate = models.CharField(max_length=20, null=True)
     publisher = models.CharField(max_length=20, null=True)
@@ -93,7 +92,7 @@ class Card(Item):
     ]
 
     tipology = models.IntegerField(choices=types,default=1)
-    collection = models.CharField(max_length=20, null=False)
+    collection = models.CharField(max_length=20, null=True)
     edition = models.CharField(max_length=20, null=True)
     color = models.CharField(max_length=20, null=True)
 
