@@ -1,0 +1,129 @@
+.profile-forms > form{
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.profile-forms{
+    flex: 2;
+
+}
+.profile-picture{
+    flex: 1;
+    text-align: center;
+}
+.profile-picture img{
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+.container_profile{
+    box-shadow: 0px 4px 8px 3px rgba(65, 61, 61, 0.08);
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+}
+.profile-informations{
+    padding: 30px;
+}
+
+.profile-line{
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.profile-line input{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-left: 5px;
+    padding: 2px 8px;
+}
+.profile-line-save .bttn-save{
+    
+    text-align: center;
+    border-radius: 4px;
+    background: #f3f4f5;
+    width: 200px;
+    color: black;
+    padding: 10px 0px;
+    text-decoration: none;
+}
+
+.profile-line-save{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-line-save .bttn-save:hover{
+    background: #eee;
+}
+
+.my-item-img{
+    padding: 20px;
+    flex:1;
+}
+.my-item-img img{
+    max-width: 120px;
+}
+
+.my-item-information{
+    flex: 6;
+    padding: 20px;
+    text-align: initial;
+}
+
+.my-item{
+    display: flex;
+}
+
+#my-itens-toggle{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#my-itensShow, #my-itensToggle {
+    padding-bottom:5px;
+   padding-top:5px;
+    text-align: center;
+/*     background-color: #e5eecc; */
+
+}
+.plus{
+
+text-align:right;
+font-weight:800;
+position: relative;
+    bottom: 2px;
+
+}
+.minus{
+
+text-align:right;
+font-weight:800;
+position: relative;
+bottom: 10px;
+
+  display:none;
+}
+
+#my-itensShow {
+    
+    display: none;
+}
+
+.myitens{
+    padding: 30px;
+}
+.containerItens{
+    box-shadow: 0px 4px 8px 3px rgba(65, 61, 61, 0.08);
+    border-radius: 10px;
+    padding: 20px;   
+}
+.myitens hr{
+    margin: 0px!important;
+    
+}
